@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Special Topics: 3D Design & Physical Computing Winter 2026</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Poppins", sans-serif
+  }
+
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .grid {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  .w3-half img {
+    margin-bottom: -6px;
+    margin-top: 16px;
+    opacity: 0.8;
+    cursor: pointer
+  }
+
+  */ .w3-half img:hover {
+    opacity: 1
+  }
+
+  .container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+
+  .responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+
+<body>
+
+  <!-- Sidebar/menu -->
+  <nav class="w3-sidebar w3-light-grey w3-collapse w3-top w3-large w3-padding"
+    style="z-index:3;width:200px;font-weight:bold;" id="mySidebar"><br>
+    <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-display-topleft"
+      style="display:none;font-size:22px"></a>
+    <div class="w3-container">
+      <h3 class="w3-padding-64"><b>IXD<br>DESN 34665<br> Winter 2026</b></h3>
+    </div>
+    <div class="w3-bar-block">
+      <a href="#Home" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+      <a href="#Module1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Module 1</a>
+      <a href="#Activity1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Activity 1</a>
+      <a href="#Activity2" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Activity 2</a>
+      <a href="#Workshop1" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Workshop 1</a>
+      <a href="#Workshop2" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Workshop 2</a>
+      <a href="#ProjectConcept" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Project 1</a>
+    </div>
+  </nav>
+
+  <!-- Top menu on small screens
+<header class="w3-container w3-top w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-red w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Menu</span>
+</header> -->
+
+  <!-- 
+  if you want to link your image to a video use one of the following alt links as an example:
+
+  alt="test1Lorem ipsum dolor sit amet, consectetur adipiscing elit test1Lorem ipsum dolor sit amet, consectetur adipiscing elit <a href='https://www.youtube.com/embed/tgbNymZ7vqY' target='_blank'><p>Project Video Link</p></a>"> 
+  alt="test2Lorem ipsum dolor sit amet, consectetur adipiscing elit <div class='container'><iframe class='responsive-iframe' src='https://www.youtube.com/embed/tgbNymZ7vqY'></iframe></div>">
+
+-->
+
+  <!-- Overlay effect when opening sidebar on small screens -->
+  <div class="w3-overlay" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+  <!-- !PAGE CONTENT! -->
+  <div class="w3-main" style="margin-left:220px;margin-right:20px">
+
+    <!-- Header -->
+    <div class="w3-container" style="margin-top:80px" id="default">
+      <h1 class="w3-jumbo" id="Home"><b>Special Topics Module 1</b></h1>
+      <h1 class="w3-xxxlarge w3-text-blue"><b>Research & Activity Documentation</b></h1>
+      <h1 class="w3-xxxlarge w3-text-blue"><b>Monserrat Cardenas</b></h1>
+    </div>
+    <!-- Boilerplate -->
+    <div id="Module1" class="w3-container" style="margin-top:20px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Project 1</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <h2>Module 1</h2>
+      <h3>Ideation for an interactive doctor kit that combines laser cut, Arduino and AR to create a learning toy. It is
+        a role-play toy were kids play as doctors, to discover their passion for medicine and the procedure to cure a
+        patient.
+      </h3>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+    </div>
+
+    <!-- Project 1 Photo grid (modal) -->
+    <div id="Activity1">
+      <h2>Activity 1</h2>
+      <p>Path Research
+      </p>
+      <div class="grid">
+        <img src="images/Activity1/a3.png" style="width:100%" onclick="onClick(this)"
+          alt="While I was finding different paths to explore for the project, I was focusing on creating a projection mapping for kids with touch designer. I was looking at different alternatives closer to my main idea.">
+        <img src="images/Activity1/a4.png" style="width:100%" onclick="onClick(this)"
+          alt="Did toy trends research from amazon and top toys of the year. ">
+        <img src="images/Activity1/a10.png" style="width:100%" onclick="onClick(this)"
+          alt="Used Toy Insider to learn about the toys market and trends. 2025–2026 toy design trends, prioritize calm technology, sustainability, and meaningful interaction over overstimulation.">
+      </div>
+    </div>
+
+    <hr style="width:90%;border:5px solid grey;margin-top:80px" class="w3-round">
+    </hr>
+
+    <div id="Activity2" class="w3-row-padding">
+      <h2>Activity 2</h2>
+      <p>PLACEHOLDER TEXT, replace this with an actual description of your activity outcome
+      </p>
+      <div class="grid">
+        <img src="images/Activity2/a2.png" style="width:100%" onclick="onClick(this)"
+          alt="I created a sketch using Procreate and asked ChatGPT to recreate the idea visually.">
+        <img src="images/Activity2/a6.png" style="width:100%" onclick="onClick(this)"
+          alt="I completed the visualization step earlier because I wanted to find a team to work with TouchDesigner. Most people were interested in other projects, and those who showed interest were following different software and ideas.">
+        <img src="images/Activity2/a8.png" style="width:100%" onclick="onClick(this)"
+          alt="After playing with the generated images and the idea, I asked ChatGPT for a final concept that mixed together the key visuals from the other images into a puzzle.">
+      </div>
+    </div>
+
+    <hr style="width:90%;border:5px solid grey;margin-top:80px" class="w3-round">
+    </hr>
+
+    <!-- Boilerplate -->
+    <div id="Project1" class="w3-container" style="margin-top:75px">
+      <h1 class="w3-xxxlarge w3-text-red"><b>Project 1</b></h1>
+      <hr style="width:50px;border:5px solid red" class="w3-round">
+      <h2>Project Concept</h2>
+      <p>PLACEHOLDER TEXT, replace this with an actual description of your proposed concept
+      </p>
+      <img src="images/final/a7.png" style="width:100%" onclick="onClick(this)" alt="teAn interactive doctor kit that combines laser cut, Arduino and AR to create a learning toy. It is a role-play toy were kids play as doctors, to discover their passion for medicine and the procedure to cure a patient.
+
+It contains a laser-cut wood, Arduino and AR to create a learning toy. Kids play as doctors on a wooden patient board with swappable parts (broken arm, bruised leg, healed parts, bones) to act out different stories. 
+
+The Makey Makey is hidden inside the board, with thin internal wiring and conductive touch zones. Wooden doctor tools include small metal tips so touching the patient triggers real sounds(heartbeat, beeps, ouch, bubbles, fun noises). 
+
+An iPad scans Patient Case Cards to show AR diagnosis and highlight the problem area only with the I pad as a XR. ">
+    </div>
+
+    <hr style="width:90%;border:5px solid grey;margin-top:80px" class="w3-round">
+    </hr>
+
+    <div id="EarlyResearch" class="w3-row-padding">
+      <h2>Testing Action Research</h2>
+      <p>PLACEHOLDER TEXT, replace this with an actual description of your first step of Action research
+      </p>
+      <div class="grid">
+        <img src="images/EarlyResearch/a1.png" style="width:100%" onclick="onClick(this)"
+          alt="People really liked the game, but they think it might be too ambitious. I tend to be very surrealist in my ideas, so sometimes I underestimate how complex a project can become. I actually thought this would be easier than some of my previous projects.
+I’ve decided to focus on the 2D AR version so it takes less time to develop. At the same time, I will start defining the target audience and planning user testing while I continue learning how to use Arduino.">
+        <img src="images/EarlyResearch/a5.png" style="width:100%" onclick="onClick(this)" alt="Toys contribute significantly to cognitive, motor, psychosocial, emotional, and linguistic skills in children. This supports your toy’s role as a learning tool, not merely entertainment.
+
+Toys must be age-appropriate and meet minimum safety requirements.
+
+Avoid design elements that create accident risk, Small or sharp parts that pose aspiration (choking) risk. 
+
+Unsafe components and poorly informed caregivers increase accident rates, over 1 million toy-related injuries in ages 0–19 have been reported in some contexts. 
+
+Caregivers and professionals should be informed about toy risks — Part of reducing toy-related injury is ensuring that parents, caregivers and health professionals understand how to choose safe play items and promote safe environments. 
+
+">
+        <img src="images/EarlyResearch/a9.png" style="width:100%" onclick="onClick(this)"
+          alt="My research based on talking to Ewa Borowczak about my project adn asked her for recommendations. She told me she made a big research after Aero was paused, and reality composer was the best option. 
+
+I downloaded it and started watching video of how it works. 
+
+In my feedback with Steve he mentioned to only trigger one image for the game, as my idea was to big for only one person. ">
+      </div>
+    </div>
+
+    <hr style="width:90%;border:5px solid grey;margin-top:80px" class="w3-round">
+    </hr>
+
+    <div id="Reflection" class="w3-row-padding">
+      <h2>Research Reflection</h2>
+      <p>When I chose this class, I was initially planning to create an interactive projection mapping experience for
+        kids where they could learn about history. My main goal was to design an engaging interactive experience for
+        children as my target audience. Now, the design is better suited for an individual project, where I can combine
+        the knowledge I gained in past semesters, especially in physical computing, into a personal project. I care
+        deeply about this toy and aim to develop a strong case study that I can share with children’s product companies,
+        helping me build a path in the kids’ industry.
+      </p>
+    </div>
+
+    <hr style="width:90%;border:5px solid grey;margin-top:80px" class="w3-round">
+    </hr>
+
+    <div id="NextSteps" class="w3-row-padding">
+      <h2>Next Steps</h2>
+      <p>From peer feedback, I've learned what is my next steps for project 2 prototyping. I’ll begin with low fidelity
+        cardboard for the board including some wires to test Arduino and some basic paper with an image to test the AR.
+        Once the interaction feels ready to test, I will ask for feedback from peers during some classes, and continue
+        levelling up the prototype following the action research.
+        From the feedback I will focus on:
+        Creating 2d ar images
+        Focus more on the user and emotional connection
+        Start learning reality composer
+        Arduino and collect sounds
+      </p>
+    </div>
+
+    <hr style="width:90%;border:5px solid grey;margin-top:80px" class="w3-round">
+    </hr>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-grey" style="padding-top:0" onclick="this.style.display='none'">
+      <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+      <div class="w3-modal-content w3-center w3-transparent" style="padding:20px">
+        <img id="img01" class="w3-image">
+        <h2 id="caption"></h2>
+
+        <!-- <div id="urLink"></div> -->
+        <!-- <a id="urLink" class="container"><iframe class="responsive-iframe"></iframe></a> -->
+        <!-- </div> -->
+      </div>
+      <!-- End page content -->
+    </div>
+
+    <!-- W3.CSS Container -->
+    <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
+      <p class="w3-right">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS"
+          target="_blank" class="w3-hover-opacity">w3.css</a></p>
+    </div>
+
+    <script>
+
+      // Modal Image Gallery
+      function onClick(element) {
+        document.getElementById("img01").src = element.src;
+
+        document.getElementById("modal01").style.display = "block";
+        var captionText = document.getElementById("caption");
+        captionText.innerHTML = element.alt;
+
+        // var captionUrl = document.getElementById("urLink");
+        // captionUrl.innerHTML = element.url;
+
+        //document.getElementById("urLink").src = element.url;
+      }
+    </script>
+
+</body>
+
+</html>
